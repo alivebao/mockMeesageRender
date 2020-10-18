@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import './App.css'
+import { MessageBox, OperationArea } from './components'
 
 function App() {
+  const [operationAreaOpened, setOperationAreaOpened] = useState(false);
+  const [messages, setMessages] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className={`container ${operationAreaOpened ? 'open' : ''}`}>
+      <MessageBox
+        messages={messages} />
+      <OperationArea
+        messages={messages} 
+        setMessages={setMessages}
+        operationAreaOpened={operationAreaOpened}
+        toggleOperationStatus={() => setOperationAreaOpened(!operationAreaOpened)} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

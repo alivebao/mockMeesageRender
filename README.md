@@ -1,3 +1,7 @@
+### Start
+1. npm install
+2. npm start
+### Intro
 basic UI:
 ![image](https://user-images.githubusercontent.com/8373285/96360069-012f5d00-114c-11eb-83eb-1a76d7aac1ef.png)
 Click more for detail
